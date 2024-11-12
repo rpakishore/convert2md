@@ -6,9 +6,7 @@ import requests
 from llama_parse import LlamaParse, ResultType
 from rich.progress import BarColumn, Progress
 
-
 from .parent import ParentParser
-
 
 nest_asyncio.apply()
 
@@ -42,11 +40,11 @@ class LlamaParser(ParentParser):
         return LlamaParse(**_default_args)
 
     def _process_file(
-        self, filepath: Path, result_type: Literal[".md", ".txt"], **kwargs
+        self, filepath: Path, result_type: Literal[".md", ".txt"] = ".md", **kwargs
     ) -> str:
         docs = self.__parser(result_type=result_type, **kwargs).load_data(str(filepath))
         response: str = "\n".join([doc.text for doc in docs])
-        self.__check_usage(self)
+        self.__check_usage()
         return response
 
     def __check_usage(self):

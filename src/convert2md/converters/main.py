@@ -1,11 +1,13 @@
-from pathlib import Path
 from abc import ABC, abstractmethod
-from rich.console import Console
-from rich.panel import Panel
-from rich import print
+from pathlib import Path
 from typing import Literal
 
+from rich import print
+from rich.console import Console
+from rich.panel import Panel
+
 from convert2md import _config
+
 from .doclingparser import DoclingParser
 from .llamaparse import LlamaParser
 
@@ -34,7 +36,7 @@ def _select_parser(filepath: Path, **kwargs) -> Parser:
     else:
         if (
             filepath.suffix.casefold() == ".pdf"
-            and _config.get(keys=("llamaparser", "apiKey"), default="") != ""
+            and _config.get(keys=("llamaparse", "apiKey"), default="") != ""
         ):
             return LlamaParser()
         else:

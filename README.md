@@ -25,6 +25,12 @@ Python 3.12
 <!-- Usage -->
 ## Usage
 
+Installation
+
+```bash
+pip install convert2md@git+https://github.com/rpakishore/convert2md
+```
+
 ```python
 from convert2md import Convert
 ```

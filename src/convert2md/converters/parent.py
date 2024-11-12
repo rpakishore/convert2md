@@ -4,7 +4,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich import print
 
-from convert2md import Config
+from convert2md import _config
 
 
 class ParentParser(ABC):
@@ -12,7 +12,7 @@ class ParentParser(ABC):
 
     def __init__(self) -> None:
         self._console = Console()
-        self.config = Config()
+        self.config = _config
 
     @staticmethod
     def _write(dest_path: Path, contents: str) -> Path:

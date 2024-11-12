@@ -4,6 +4,7 @@ __version__ = "0.0.1"
 from rich.console import Console
 from rich.panel import Panel
 
+from .converters.main import Convert
 from .utils.config_parser import Config
 
 _config = Config()

@@ -3,29 +3,23 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "template_python"
-requires-python = ">=3.12.0"
+name = "convert2md"
+requires-python = ">=3.12, <3.13"
 authors = [{name = "Arun Kishore", email = "pypi@rpakishore.co.in"}]
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"]
 dynamic = ["version", "description"]
 dependencies = [
-    "cryptography",
     "typer",
-    "slack_sdk",
     "ak_requests", #Gotify
-    "keyring", #credentials.py, llm.py
-    "ollama",
-    "tiktoken",
-    "openai",
-    "instructor",
-    "pydantic", #llm.py
     "rich",
+    "docling>=2.5.1",
+    "llama-index>=0.11.23",
+    "llama-parse>=0.5.14",
 ]
 
 [project.optional-dependencies]
-
 dev = [
     "ipykernel",
     "pytest",
@@ -33,7 +27,8 @@ dev = [
 ]
 
 [project.urls]
-Home = "https://github.com/rpakishore/template_python"
+Home = "https://github.com/rpakishore/convert2md"
 
 [project.scripts]
-cli="template_python.cli_app:app"
+cli="convert2md.cli_app:app"
+config="convert2md.cli_app:test"

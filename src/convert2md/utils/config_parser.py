@@ -2,7 +2,7 @@ import tomllib
 from functools import cached_property
 from pathlib import Path
 
-from .logger import log
+from rich import print
 
 
 class Config:
@@ -16,14 +16,16 @@ class Config:
                 self.__filepath = filepath / filename
             else:
                 self.__filename = filepath.name
-        log.info(f"Initialized {self.__str__()}. Config Exists: {self.exists()}.")
+
+        print(f"[{'green' if self.exists() else 'bright_red'}]{self.__str__()} Loaded.")
 
     def __str__(self) -> str:
-        return f"Config(filename={self.__filename}, filepath={self.__filepath})"
+        return f"Config(filename={self.filepath.name}, filepath={self.filepath.parent.resolve()})"
 
     @cached_property
     def filepath(self) -> Path | None:
-        if self.__filepath is not None and self.filepath.exists():
+        """Filepath of the config.toml"""
+        if self.__filepath is not None and self.__filepath.exists():
             return self.__filepath
         if Path(self.__filename).exists():
             return Path(self.__filename)
@@ -43,6 +45,10 @@ class Config:
         else:
             return None
 
+    def exists(self) -> bool:
+        """Confirm that config file exists"""
+        return self.filepath is not None and self.filepath.exists()
+
     @property
     def value(self) -> dict:
         """Get config value"""
@@ -57,10 +63,3 @@ class Config:
         for key in keys[:-1]:
             data = data.get(key, {})
         return data.get(keys[-1], default)
-
-    def exists(self) -> bool:
-        if self.filepath is None:
-            return False
-        if not self.filepath.exists():
-            return False
-        return True

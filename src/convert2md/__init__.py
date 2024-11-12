@@ -5,21 +5,8 @@ from rich.console import Console
 from rich.panel import Panel
 
 from .utils.config_parser import Config
-from .utils.logger import log
-
-log.info("template_python Module Initialized")
 
 _config = Config()
-
-
-def debug(status=False):
-    """Import this in a new module and enable debug to use debug"""
-    if status:
-        log.setLevel(10)  # debug
-    else:
-        log.setLevel(20)  # info
-
-    log.debug(f"Debug Mode: {status}")
 
 
 def test_configs():
@@ -44,13 +31,5 @@ def test_configs():
                     Panel(f"[red bold]Not OK", title=title, border_style="red")
                 )
 
-    # OpenAI
-    check_configs(
-        "OpenAI", [("openai", "api_base"), ("openai", "key"), ("openai", "model")]
-    )
-
-    # Gotify
-    check_configs("Gotify", [("gotify", "app")])
-
-
-debug(status=False)
+    # Llamaparse
+    check_configs("Llamaparse", [("llamaparse", "apiKey")])

@@ -130,6 +130,6 @@ dmypy.json
 .vscode/settings.json
 WebDriver/chromedriver.exe
 nosync*
-src/template_python/Session.key
+src/convert2md/Session.key
 config.toml
 uv.lock

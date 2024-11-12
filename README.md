@@ -1,14 +1,14 @@
 <!--- Heading --->
 <div align="center">
-  <h1>template_python</h1>
+  <h1>convert2md</h1>
   <p>
     A Template Description
   </p>
 </div>
 <br />
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpakishore/template_python)
-![GitHub last commit](https://img.shields.io/github/last-commit/rpakishore/template_python)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/rpakishore/convert2md)
+![GitHub last commit](https://img.shields.io/github/last-commit/rpakishore/convert2md)
 <!-- Table of Contents -->
 <h2>Table of Contents</h2>
 
@@ -39,7 +39,7 @@ Python 3.12 or above
 ## Usage
 
 ```python
-from template_python import debug, test_config
+from convert2md import debug, test_config
 debug(True) #For debug messages, Can be skipped.
 
 test_config() # Test if config.toml has been correctly set up
@@ -61,4 +61,4 @@ See [LICENSE](/LICENSE) for more information.
 
 Arun Kishore - [@rpakishore](mailto:pypi@rpakishore.co.in)
 
-Project Link: [https://github.com/rpakishore/template_python](https://github.com/rpakishore/template_python)
+Project Link: [https://github.com/rpakishore/convert2md](https://github.com/rpakishore/convert2md)

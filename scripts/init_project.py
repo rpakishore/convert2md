@@ -5,7 +5,7 @@ import shutil
 
 root_dir = Path(__file__).parent.parent
 read_me: Path = root_dir / 'README.md'
-project_path: Path = root_dir / 'src' / 'template_python'
+project_path: Path = root_dir / 'src' / 'convert2md'
 tests_path: Path = root_dir / 'src' / 'tests'
 pyproject: Path = root_dir / 'pyproject.toml'
 config:Path = root_dir / 'config.example.toml'
@@ -84,7 +84,7 @@ if not ask_yes_no("Need Gotify?"):
 
 if not ask_yes_no("Need CLI?"):
     (project_path / 'cli_app.py').unlink()
-    replace_txt_in_file(filepath=pyproject, match='app="template_python.cli_app:app"', replacement="")
+    replace_txt_in_file(filepath=pyproject, match='app="convert2md.cli_app:app"', replacement="")
     
 if not ask_yes_no("Need LLM?"):
     (project_path / 'llm.py').unlink()
@@ -115,12 +115,12 @@ model='llama3'
     
 project_path.rename(project_path.with_name(package))
 
-#replace all template_python reference with package_name
+#replace all convert2md reference with package_name
 exts = [".toml", ".json", ".txt", ".py", ".md"]
 for ext in exts:
     for file in root_dir.glob(f"**/*{ext}"):
-        replace_txt_in_file(filepath=file, match="rpakishore/template_python", replacement=f"rpakishore/{urlname}")
-        replace_txt_in_file(filepath=file, match="template_python", replacement=package)
+        replace_txt_in_file(filepath=file, match="rpakishore/convert2md", replacement=f"rpakishore/{urlname}")
+        replace_txt_in_file(filepath=file, match="convert2md", replacement=package)
 
 # delete current file
 Path(__file__).unlink()

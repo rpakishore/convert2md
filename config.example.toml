@@ -1,7 +1,2 @@
-[openai]
-api_base='http://localhost:11434/v1'
-key='ollama' #base64 encoded key
-model='llama3'
-
-[gotify]
-app='apptoken'
+[llamaparse]
+apiKey=''

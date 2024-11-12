@@ -2,9 +2,7 @@ import getpass
 import sys
 from base64 import b64decode, b64encode
 
-from template_python import _config
-
-from .logger import log
+from convert2md import _config
 
 
 def get_password(item: str, username: str):

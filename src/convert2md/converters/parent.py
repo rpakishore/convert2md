@@ -33,6 +33,7 @@ class ParentParser(ABC):
         dest_dir: Path | None = None,
         **kwargs,
     ):
+        assert filepath.exists()
         dest_dir = dest_dir or filepath.parent
         destpath: Path = dest_dir / f"{filepath.stem}.md"
         with self._console.status(

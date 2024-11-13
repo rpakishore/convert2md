@@ -28,7 +28,9 @@ Python 3.12
 Installation
 
 ```bash
-pip install convert2md@git+https://github.com/rpakishore/convert2md
+pip install uv
+uv venv --python 3.12.7
+uv pip install convert2md@git+https://github.com/rpakishore/convert2md
 ```
 
 Python Usage
@@ -40,7 +42,7 @@ from convert2md import Convert
 or alternatively in cmd
 
 ```bash
-cli --help
+uv run cli --help
 ```
 <!-- License -->
 ## License

@@ -63,3 +63,6 @@ class Config:
         for key in keys[:-1]:
             data = data.get(key, {})
         return data.get(keys[-1], default)
+
+
+config = Config()

@@ -5,9 +5,7 @@ from rich.console import Console
 from rich.panel import Panel
 
 from .converters.main import Convert
-from .utils.config_parser import Config
-
-_config = Config()
+from .utils.config_parser import config
 
 
 def test_configs():
@@ -18,7 +16,7 @@ def test_configs():
     console.rule(f"[bold magenta]Module: {module_name}[/bold magenta]\n")
 
     def _config_vals_ok(keys: tuple[str, ...], default="NAN") -> bool:
-        return _config.get(keys=keys, default=default) != default
+        return config.get(keys=keys, default=default) != default
 
     # Define a helper to format the output
     def check_configs(title, vals_to_check):

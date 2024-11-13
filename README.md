@@ -31,6 +31,8 @@ Installation
 pip install convert2md@git+https://github.com/rpakishore/convert2md
 ```
 
+Python Usage
+
 ```python
 from convert2md import Convert
 ```

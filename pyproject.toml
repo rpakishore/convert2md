@@ -17,6 +17,7 @@ dependencies = [
     "docling>=2.5.1",
     "llama-index>=0.11.23",
     "llama-parse>=0.5.14",
+    "numpy>=1.26.4,<=2.0.0"
 ]
 
 [project.optional-dependencies]
